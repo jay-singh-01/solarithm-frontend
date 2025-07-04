@@ -11,7 +11,7 @@ function Home() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/testimonials")
+      .get(`${process.env.REACT_APP_API_BASE_URL}/api/testimonials`)
       .then((res) => setTestimonials(res.data))
       .catch((err) => console.error(err));
   }, []);

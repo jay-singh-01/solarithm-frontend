@@ -30,7 +30,7 @@ function Contact() {
     setStatus(null);
     if (!validate()) return;
     try {
-      await axios.post("http://localhost:5000/api/contact", { name, email, message });
+      await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/contact`, { name, email, message });
       setStatus("Message sent successfully!");
       setShowModal(true);
       setName("");

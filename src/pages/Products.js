@@ -11,7 +11,7 @@ function Products() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/products")
+      .get(`${process.env.REACT_APP_API_BASE_URL}/api/products`)
       .then((res) => {
         setProducts(res.data);
         setLoading(false); // ✅ data fetched

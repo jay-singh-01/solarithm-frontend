@@ -16,7 +16,7 @@ function AdminTestimonials() {
     e.preventDefault();
     setStatus(null);
     try {
-      await axios.post('http://localhost:5000/api/admin/login', {
+      await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/admin/login`, {
         password: adminPassword,
       });
       setIsAuthenticated(true);
@@ -29,7 +29,7 @@ function AdminTestimonials() {
 
   const fetchTestimonials = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/testimonials');
+      const res = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/testimonials`);
       setTestimonials(res.data);
     } catch (error) {
       console.error(error);
@@ -41,7 +41,7 @@ function AdminTestimonials() {
     setStatus(null); // reset status
     try {
       await axios.post(
-        'http://localhost:5000/api/testimonials',
+        `${process.env.REACT_APP_API_BASE_URL}/api/testimonials`,
         { name, company, imageUrl, feedback },
         { headers: { 'X-Admin-Password': adminPassword } }
       );

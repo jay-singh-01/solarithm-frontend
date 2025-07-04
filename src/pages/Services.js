@@ -9,7 +9,7 @@ function Services() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/services")
+      .get(`${process.env.REACT_APP_API_BASE_URL}/api/services`)
       .then((res) => setServices(res.data))
       .catch((err) => console.error(err));
   }, []);
