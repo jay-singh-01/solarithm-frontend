@@ -45,11 +45,13 @@ function Services() {
             viewport={{ once: true }}
           >
             {service.imageUrl && (
-              <img
-                src={service.imageUrl}
-                alt={service.title}
-                className="w-full h-48 object-cover rounded mb-4"
-              />
+              <div className="aspect-w-4 aspect-h-3 mb-4">
+                <img
+                  src={service.imageUrl}
+                  alt={service.title}
+                  className="object-cover w-full h-full rounded"
+                />
+              </div>
             )}
             <h2 className="text-xl font-semibold mb-2 text-green-400">{service.title}</h2>
             <p className="text-gray-700 dark:text-gray-200">{service.description}</p>

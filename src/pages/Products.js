@@ -53,11 +53,13 @@ function Products() {
                 viewport={{ once: true }}
               >
                 {p.imageUrl && (
-                  <img
-                    src={p.imageUrl}
-                    alt={p.title}
-                    className="w-full h-48 object-cover rounded mb-4"
-                  />
+                  <div className="aspect-w-4 aspect-h-3 mb-4">
+                    <img
+                      src={p.imageUrl}
+                      alt={p.title}
+                      className="object-cover w-full h-full rounded"
+                    />
+                  </div>
                 )}
                 <h2 className="text-xl font-semibold mb-2 text-green-400">{p.title}</h2>
                 <p className="text-gray-700 dark:text-gray-200 mb-2">{p.description}</p>
